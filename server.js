@@ -34,6 +34,7 @@ app.get("/postalCodeSearch", async (req, res) => {
     const response = await axios.get(geonamesUrl, {
       params: { postalcode, country, username },
     });
+    console.log("response: ", response);
     res.json(response.data);
   } catch (err) {
     console.error("GeoNames API error:", err.message);
